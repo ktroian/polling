@@ -5,7 +5,8 @@ Building:
 ```go build main.go db.go poll.go company.go```
 
 CLI arguments:
-```-host string
+```
+  -host string
     	hostname for the service API (default "localhost")
   -port int
     	a port of the service API (default 8080)
