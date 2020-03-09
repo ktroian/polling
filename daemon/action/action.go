@@ -9,7 +9,7 @@ var (
 )
 
 type Action struct {
-    Target      unsafe.Pointer
+	Target      unsafe.Pointer
 	Type 		int
 }
 
@@ -20,7 +20,7 @@ func Init() {
 }
 
 func Add(actionType int, target unsafe.Pointer) {
-    actions <- Action{target, actionType}
+	actions <- Action{target, actionType}
 }
 
 func Pop() Action {

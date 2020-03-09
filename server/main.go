@@ -30,12 +30,12 @@ func main() {
 	updChannel := make(chan bool)
 	companies := &AllCompanies{ companies: &Companies{} }
 
-    file := flag.String("file", "", "path to a .csv file")
-    port := flag.Int("port", 8080, "a port of the server")
+	file := flag.String("file", "", "path to a .csv file")
+	port := flag.Int("port", 8080, "a port of the server")
 	defer log.Println("Server Stopped")
 
 	handleSignals(cancel)
-    flag.Parse()
+	flag.Parse()
 
 	initWriter(ctx, updChannel, companies, *file)
 	serveRoutes(ctx, updChannel, companies, *port)

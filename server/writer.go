@@ -60,7 +60,7 @@ func readFile(filename string) [][]string {
 	}
 	reader := csv.NewReader(file)
 
-	data, _ := reader.ReadAll()
+	data, err := reader.ReadAll()
 	if err != nil {
 		log.Fatal(err)
 	}

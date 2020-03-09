@@ -3,7 +3,7 @@ package main
 import (
 	"unsafe"
 	
-    "github.com/ktroian/polling/daemon/action"
+	"github.com/ktroian/polling/daemon/action"
 )
 
 type Company struct {
@@ -15,7 +15,7 @@ type Company struct {
 }
 
 func newAction(actionType int, c *Company) {
-    action.Add(actionType, unsafe.Pointer(c))
+	action.Add(actionType, unsafe.Pointer(c))
 }
 
 func (c *Company) load() {
@@ -23,9 +23,9 @@ func (c *Company) load() {
 }
 
 func (c *Company) save() {
-    newAction(InsertOne, c)
+	newAction(InsertOne, c)
 }
 
 func (c *Company) delete() {
-    newAction(DeleteOne, c)
+	newAction(DeleteOne, c)
 }
