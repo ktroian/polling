@@ -2,7 +2,8 @@ This is a daemon (micro)service, it's main goal is to poll the rest API and put 
 Currently, only postgres is supported.
 
 Building:
-```go build main.go db.go poll.go company.go```
+
+``` go build main.go db.go poll.go company.go```
 
 CLI arguments:
 ```
@@ -38,17 +39,22 @@ Usage:
   Program can be used in 2 modes, as a separate process or as a deamon (to be fare, just detached process for now)
   
   As a process:
-  ```./main [host|port|interval|log|username|password]```
+ 
+  ``` ./main [host|port|interval|log|username|password]```
   
   As a daemon:
-  ```./main [host|port|interval|log|username|password] & disown```
+  
+  ``` ./main [host|port|interval|log|username|password] & disown```
   
   Alternatively, other external tools may be used to start a daemon:
+  
   nohup
-  ```nohup ./main [args...]```
+  
+  ``` nohup ./main [args...]```
   
   daemonize
-  ```daemonize -p /var/run/main.pid -l /var/lock/subsys/main -u nobody ./main [args...]```
+  
+  ``` daemonize -p /var/run/main.pid -l /var/lock/subsys/main -u nobody ./main [args...]```
   
 TODO:
   - Implement starting daemon from the process
